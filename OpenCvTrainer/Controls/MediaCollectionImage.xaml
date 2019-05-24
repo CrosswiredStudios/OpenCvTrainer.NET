@@ -1,0 +1,40 @@
+﻿<UserControl
+    x:Class="OpenCvTrainer.Controls.MediaCollectionImage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OpenCvTrainer.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="300">
+
+    <Grid
+        x:Name="GContainer"
+        Background="Transparent"
+        ColumnSpacing="16"
+        Padding="4,8,16,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.Column="0"
+            Height="48"
+            Width="48"
+            Source="{Binding Thumbnail, Mode=OneWay}"
+            VerticalAlignment="Center"/>
+        <TextBlock
+            Grid.Column="1"
+            Text="{Binding FileName, Mode=OneWay}"
+            TextTrimming="CharacterEllipsis"
+            VerticalAlignment="Center"/>
+        <FontIcon
+            x:Name="FiDelete"
+            Foreground="#A00"
+            Glyph="&#xE74D;"
+            Grid.Column="2"
+            Opacity="0"/>
+    </Grid>
+</UserControl>
